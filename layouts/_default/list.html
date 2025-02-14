@@ -1,0 +1,52 @@
+{{ define "main" }}
+<content>
+    <ul class="list-posts">
+        {{ range .Pages }}
+        <a href="{{ .Permalink }}">
+            <li class="list-post">
+                <h2 style="margin: 0;">{{ .Title }}</h2>
+                {{ if not (eq .Description .Site.Params.Description) }}
+                <p style="margin: 4px;">{{ .Description }}</p>
+                {{ end }}
+                <i><time datetime='{{ .Date.Format "2006-01-02" }}'>
+                        {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+                        *
+                        {{ .GitInfo.AbbreviatedHash }}
+                    </time></i>
+            </li>
+        </a>
+        {{ else }}
+        <li class="list-post">No posts found. Please come back later</li>
+        {{ end }}
+    </ul>
+</content>
+
+<style>
+    .list-posts {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
+
+    .list-posts>a {
+        color: #d4be98 !important;
+        text-decoration: none;
+    }
+
+    .list-posts>a:hover {
+        color: #8f826b !important;
+    }
+
+    .list-post {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    .list-post>i>time {
+        color: gray;
+    }
+</style>
+{{ end }}

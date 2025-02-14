@@ -1,0 +1,19 @@
+<div>
+	<div style="display: flex; align-items: baseline;">
+		<h1 style="margin-bottom: 0;flex: 1; font-style: italic;">{{ .Site.Title }}</h1>
+		<nav>
+			<a href="{{ "" | relURL }}" class="forever">Home</a>
+			{{ range .Site.Menus.main }}
+			<a href="{{ .URL }}" class="forever">{{ .Name }}</a>
+			{{ end }}
+			{{ with .Site.GetPage "/blog" }}
+			<a href="{{ "blog" | relURL }}" class="forever">Blog</a>
+			{{ end }}
+		</nav>
+	</div>
+	<div class="ticker">
+		<span id="tickertext">If you see this the ticker is loading or broken :3</span>
+	</div>
+	<script src="/ticker.js"></script>
+	<hr style="margin-top: 0;">
+</div>

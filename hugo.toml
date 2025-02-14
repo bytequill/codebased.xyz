@@ -1,0 +1,9 @@
+baseURL = 'https://codebased.xyz/'
+languageCode = 'en-us'
+title = 'bytequill :3'
+enableGitInfo = true
+
+[params]
+description = 'Awesome computer nerd on the internet :3'
+
+footerText = 'Made with <a href="https://stats.fm/codebased">|></a> by bytequill :3 <> See the <a href="https://github.com/bytequill/codebased.xyz">Source code</a>'

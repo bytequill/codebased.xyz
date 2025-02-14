@@ -1,0 +1,4 @@
+
+# Hugo build files
+public/
+.hugo_build.lock
