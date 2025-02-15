@@ -1,0 +1,132 @@
+<style>
+	@import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+
+	:root {
+		--bg_dim: #131617;
+		--bg0: #1d2021;
+		--fg0: #d4be98;
+
+		--accent: #89b482;
+		--accent_dim: #8ba38d;
+	}
+
+	html,
+	body {
+		height: 100%;
+		margin: 0;
+	}
+
+	a {
+		color: var(--accent);
+	}
+
+	a:visited {
+		color: var(--accent_dim);
+	}
+
+	.forever:visited {
+		color: var(--accent);
+	}
+
+	body {
+		width: 630px;
+		margin: auto;
+		background: var(--bg0);
+		color: var(--fg0);
+		overflow-wrap: break-word;
+		font-family: "Fira Code", monospace;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: 3px;
+	}
+
+	.hanchor {
+		visibility: hidden;
+	}
+
+	h1:hover a,
+	h2:hover a,
+	h3:hover a,
+	h4:hover a,
+	h5:hover a,
+	h6:hover a {
+		visibility: visible
+	}
+
+	p {
+		margin-top: 0;
+	}
+
+	img {
+		max-width: 630px;
+	}
+
+	.imgfig {
+		margin: 0 auto;
+		border: 1px solid var(--fg0);
+		width: fit-content;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.imgcaption {
+		font-style: italic;
+		margin: 5px auto;
+	}
+
+	hr {
+		border-style: dashed;
+	}
+
+	.wrapper {
+		min-height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	main {
+		flex: 1;
+	}
+
+	#footer {
+		text-align: center;
+	}
+
+	.ticker {
+		background-color: var(--bg_dim);
+		padding: 2px;
+		margin-top: 5px;
+		height: 20px;
+
+		overflow: hidden;
+	}
+	.ticker:hover>.tickerelement, .tickerelement:hover {
+		animation-play-state: paused !important;
+	}
+
+	@keyframes tickeranim {
+		0% {
+			transform: translateX(620px)
+		}
+
+		to {
+			transform: translateX(-100%)
+		}
+	}
+
+	.tickerelement {
+		display: block;
+		max-width: 9999%;
+		min-width: 100%;
+		position: relative;
+		white-space: nowrap;
+		width: fit-content;
+	}
+</style>

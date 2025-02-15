@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{ if eq .Type "blog" }}
+<div>
+    <h1 style="margin-bottom: 0;">{{ .Title }}</h1>
+    <h2 style="margin: 0 2px; font-size: medium;">{{ .Description }}</h2>
+    {{ $dateCreated := .Date.Format "2006-01-02" }}
+    {{ $dateMod := .Lastmod.Format "2006-01-02" }}
+    <i><time datetime="{{ $dateCreated }}" style="color: gray;">
+
+            {{ $dateCreated }}
+            {{ if not (eq $dateCreated $dateMod)}}
+            * modified: {{ $dateMod }}
+            {{ if .GitInfo.AbbreviatedHash }}
+            ({{ .GitInfo.AbbreviatedHash }})
+            {{ end }}
+            {{ end }}
+            {{ if .Draft}}
+            * DRAFT
+            {{end}}
+            </span></i>
+    <hr>
+</div>
+{{ .Content | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor forever"
+        ariaLabel="Anchor">#</a> ${3}` | safeHTML }}
+    {{ end }}
+    {{ end }}
+
+    {{ define "og-data" }}
+    {{ if eq .Type "blog" }}
+    {{ $dateCreated := .Date.Format "2006-01-02" }}
+    {{ $dateMod := .Date.Format "2006-01-02" }}
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="{{ $dateCreated }}" />
+    {{ if not (eq $dateCreated $dateMod)}}
+    <meta property="article:modified_time" content="{{ $dateCreated }}" />
+    {{ end }}
+    {{ else }}
+    <meta property="og:type" content="website" />
+    {{ end }}
+    {{ end }}

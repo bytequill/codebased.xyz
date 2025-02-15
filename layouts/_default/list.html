@@ -10,8 +10,9 @@
                 {{ end }}
                 <i><time datetime='{{ .Date.Format "2006-01-02" }}'>
                         {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
-                        *
-                        {{ .GitInfo.AbbreviatedHash }}
+                        {{ if .Draft}}
+                        * DRAFT
+                        {{end}}
                     </time></i>
             </li>
         </a>
@@ -31,7 +32,7 @@
     }
 
     .list-posts>a {
-        color: #d4be98 !important;
+        color: var(--fg0) !important;
         text-decoration: none;
     }
 
@@ -49,4 +50,7 @@
         color: gray;
     }
 </style>
+{{ end }}
+{{ define "og-data" }}
+<meta property="og:type" content="website" />
 {{ end }}

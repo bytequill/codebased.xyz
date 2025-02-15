@@ -7,15 +7,15 @@ var TickerTexts = [
 
 "alias cd='sudo rm -rf / --no-preserve-root'",
 "neofetch --ascii_distro arch, btw",
-"",
 
 "Making this website gave me a unique insight into madness",
+"",
 "Perpetually under construction",
 "Can you believe it?",
 "3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679",
 ":)",
 "🤓 Uhm, ahthshually!",
-"<span style='font-family: Comic Sans MS, Comic Sans, cursive;'>I'm feeling a little funny today...</span>",
+"<span style='font-family: Comic Sans MS, Comic Sans;'>I'm feeling a little funny today...</span>",
 "Can I add arbitrary <span style='color: red;'>HTML</span> in these?", // It was at this moment that he knew, he fucked up
 "Crazy? I was crazy once. They locked me in a room. A rubber room. A rubber room full of rats and the rats made me crazy. Crazy? I was crazy once. They locked me in a room. A rubber room. A rubber room full of rats and the rats made me crazy.", // Yeah I know the original is "room with rats" but cmon "full of rats" is so much better
 "THE CAKE IS A LIE THE CAKE IS A LIE THE CAKE IS A LIE THE CAKE IS A LIE THE CAKE IS A LIE THE CAKE IS A LIE THE CAKE IS A LIE",
@@ -24,9 +24,8 @@ var TickerTexts = [
 // This section is reserved for ULTRAKILL references
 "<span class='silkscreen'>MANKIND IS <span style='color: red;'>DEAD</span> | <span style='color: red;'>BLOOD</span> IS FUEL | <span style='color: red;'>HELL IS FULL</span></span>",
 "<span class='silkscreen'>BEHOLD, THE POWER OF AN <span style='color: cyan;'>ANGEL!!!</span></span>",
-"<span class='silkscreen'><span style='color: cyan'>Limbo</span>, <span style='color: purple;'>Lust</span>, all gone... With <span style='color: red'>Gluttony</span> soon to follow. Your kind know nothing but hunger; purged all life on the upper layers, and yet they remain unsatiated... As do you. You've taken everything from me, machine. And now all that remains is <span style='color:red;'>PERFECT HATRED</span>.</span>",
+"<span class='silkscreen'><span style='color: cyan'>Limbo</span>, <span style='color: purple;'>Lust</span>, all gone… With <span style='color: red'>Gluttony</span> soon to follow. Your kind know nothing but hunger; purged all life on the upper layers, and yet they remain unsatiated... As do you. You've taken everything from me, machine. And now all that remains is <span style='color:red;'>PERFECT HATRED</span>.</span>",
 
-"TODO: Make the background interesting",
 "TODO: Destroy all phones so I don't have to make this website reactive",
 "TODO: Become a GOD",
 "TODO: Get out of bed",
@@ -75,4 +74,8 @@ function choosenext() {
 
 }
 
-choosenext()
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    ticker.innerText = "The ticker is disabled; 'reduced-motion' preference :3";
+} else {
+    choosenext()
+}
