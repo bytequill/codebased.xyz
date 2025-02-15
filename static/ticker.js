@@ -9,11 +9,12 @@ var TickerTexts = [
 "neofetch --ascii_distro arch, btw",
 
 "Making this website gave me a unique insight into madness",
-"",
 "Perpetually under construction",
 "Can you believe it?",
 "3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679",
 ":)",
+":3",
+":D",
 "🤓 Uhm, ahthshually!",
 "<span style='font-family: Comic Sans MS, Comic Sans;'>I'm feeling a little funny today...</span>",
 "Can I add arbitrary <span style='color: red;'>HTML</span> in these?", // It was at this moment that he knew, he fucked up
