@@ -1,3 +1,5 @@
+// Feel free to copy as much as you want from this script
+// Let the web be free
 var TickerTexts = [
 // Website button chain!
 // "<div style='display: flex; flex-direction: row;'><a href='https://motan.gay/' alt='https://motan.gay/ - behold now!'><img src='https://motan.gay/images/button.png'></a> <a href=https://tabby.nekoweb.org><img src=https://tabby.nekoweb.org/assets/tabbutton.gif alt=tabbutton></a></div>",
@@ -20,7 +22,7 @@ var TickerTexts = [
 "Can I add arbitrary <span style='color: red;'>HTML</span> in these?", // It was at this moment that he knew, he fucked up
 "Crazy? I was crazy once. They locked me in a room. A rubber room. A rubber room full of rats and the rats made me crazy. Crazy? I was crazy once. They locked me in a room. A rubber room. A rubber room full of rats and the rats made me crazy.", // Yeah I know the original is "room with rats" but cmon "full of rats" is so much better
 "THE CAKE IS A LIE THE CAKE IS A LIE THE CAKE IS A LIE THE CAKE IS A LIE THE CAKE IS A LIE THE CAKE IS A LIE THE CAKE IS A LIE",
-"The time is: <span class='time-local'>00:00:00</span>",
+// "The time is: <span class='time-local'>00:00:00</span>", // TODO: Put the local-time script in this site too
 
 // This section is reserved for ULTRAKILL references
 "<span class='silkscreen'>MANKIND IS <span style='color: red;'>DEAD</span> | <span style='color: red;'>BLOOD</span> IS FUEL | <span style='color: red;'>HELL IS FULL</span></span>",
@@ -36,15 +38,15 @@ var TickerTexts = [
 // Sprinkle in a bit of the beautiful language that is Polish. Is this even gramatically correct?
 ]
 
-var tspeed = 155;
-var tREPLACE_ID = "tickertext"
+// No longer In pixels per second I fucked it up and now its arbitrary
+var tspeed = 100;
+var tREPLACE_ID = "tickerelement"
 
 var ticker = document.getElementById(tREPLACE_ID)
 var tlastItem = 0
 var tnextTicker = 0
 
 function choosenext() {
-    // No longer In pixels per second I fucked it up and now its arbitrary
     while (true){
         tnextTicker = Math.floor(Math.random() * TickerTexts.length)
         if (tnextTicker != tlastItem || TickerTexts.length == 1) {
@@ -57,7 +59,7 @@ function choosenext() {
 
     const newTicker = document.createElement('span')
     newTicker.innerHTML = TickerTexts[tnextTicker]
-    newTicker.classList.add('tickerelement')
+    newTicker.classList.add(tREPLACE_ID)
     ticker.parentNode.replaceChild(newTicker, ticker)
     
     ticker = newTicker
@@ -76,7 +78,7 @@ function choosenext() {
 }
 
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    ticker.innerText = "The ticker is disabled; 'reduced-motion' preference :3";
+    ticker.innerText = "The ticker is disabled; 'prefers-reduced-motion' is on :3";
 } else {
     choosenext()
 }

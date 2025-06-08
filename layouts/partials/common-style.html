@@ -34,6 +34,10 @@
 		background: var(--bg0);
 		color: var(--fg0);
 		overflow-wrap: break-word;
+		font-family: "Iosevka Web", "Fira Code", monospace;
+	}
+
+	.fira {
 		font-family: "Fira Code", monospace;
 	}
 
@@ -59,7 +63,7 @@
 		visibility: visible
 	}
 
-	p {
+	p, ul {
 		margin-top: 0;
 	}
 
@@ -122,11 +126,32 @@
 	}
 
 	.tickerelement {
+		font-family: 'Fira code', monospace;
 		display: block;
-		max-width: 9999%;
 		min-width: 100%;
 		position: relative;
 		white-space: nowrap;
 		width: fit-content;
+	}
+
+	@font-face {
+		font-family: Iosevka Web;
+		font-display: swap;
+		font-style: normal;
+		src: url(/font/Iosevka-Regular.woff2) format("woff2");
+	}
+
+	@font-face {
+		font-family: Iosevka Web;
+		font-display: swap;
+		font-style: italic;
+		src: url(/font/Iosevka-Italic.woff2) format("woff2");
+	}
+
+	@font-face {
+		font-family: Iosevka Web;
+		font-display: swap;
+		font-weight: 700;
+		src: url(/font/Iosevka-Bold.woff2) format("woff2");
 	}
 </style>

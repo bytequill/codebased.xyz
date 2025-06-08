@@ -1,0 +1,10 @@
+<ol id="breadcrumbs" style="display: flex; list-style: none; padding: 0; margin: 0; margin-bottom: 3px;">
+    {{- range .Ancestors.Reverse }}
+        {{ if eq .RelPermalink "/"}}
+        <li><a class="forever" href="{{ .RelPermalink }}">Home</a>></li>
+        {{else}}
+        <li><a class="forever" href="{{ .RelPermalink }}">{{ if .Title }}{{ .Title }}{{ else }}{{ replace .RelPermalink "/" "" }}{{ end }}</a>></li>
+        {{end}}
+    {{- end }}
+    <li><a class="forever" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+</ol>

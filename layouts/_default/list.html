@@ -2,14 +2,14 @@
 <content>
     <ul class="list-posts">
         {{ range .Pages }}
-        <a href="{{ .Permalink }}">
+        <a href="{{ .Permalink }}" {{if eq .Content ""}} style="pointer-events: none;" {{ end }}>
             <li class="list-post">
                 <h2 style="margin: 0;">{{ .Title }}</h2>
                 {{ if not (eq .Description .Site.Params.Description) }}
-                <p style="margin: 4px;">{{ .Description }}</p>
+                <p style="margin: 4px; text-align: justify;">{{ .Description }}</p>
                 {{ end }}
                 <i><time datetime='{{ .Date.Format "2006-01-02" }}'>
-                        {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+                        {{ .Date | time.Format ":date_medium" }}
                         {{ if .Draft}}
                         * DRAFT
                         {{end}}

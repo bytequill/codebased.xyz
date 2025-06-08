@@ -1,17 +1,53 @@
 baseURL = 'https://codebased.xyz/'
-languageCode = 'en-us'
 title = 'bytequill :3'
 enableGitInfo = true
 
-[menus]
-    [[menus.main]]
-      name = 'Portfolio'
-      pageRef = '/portfolio'
-    [[menus.main]]
-      name = 'Blog'
-      pageRef = '/blog'
+defaultContentLanguage = 'en'
+[languages]
+  [languages.en]
+    weight = 1
+    languageCode = 'en'
+    languageName = 'English'
+    contentDir = 'content/en'
+    [languages.en.menus]
+        [[languages.en.menus.main]]
+          name = 'Home'
+          pageRef = '/'
+          weight = 1
+        [[languages.en.menus.main]]
+          name = 'Portfolio'
+          pageRef = '/portfolio'
+          weight = 2
+        [[languages.en.menus.main]]
+          name = 'Blog'
+          pageRef = '/blog'
+          weight = 3
+    [languages.en.params]
+      footerText = 'Made with <a href="https://stats.fm/codebased" target="_blank">|></a> by bytequill@codebased.xyz <> See the <a href="https://github.com/bytequill/codebased.xyz" target="_blank">Source code</a>'
+      notice = '<span class="fira">🇵🇱</span> Angielski nie jest twoją mocną stroną? <a href="/pl%s">Przejdź na Polską wersję</a>'
+  [languages.pl]
+    weight = 2
+    languageCode = 'pl'
+    languageName = 'Polski'
+    timeZone = "Europe/Warsaw"
+    contentDir = 'content/pl'
+    pluralizeListTitles = false
+    [languages.pl.menus]
+        [[languages.pl.menus.main]]
+          name = 'Strona główna'
+          pageRef = '/pl'
+          weight = 1
+        [[languages.pl.menus.main]]
+          name = 'Blog'
+          pageRef = '/pl/blog'
+          weight = 2
+        [[languages.pl.menus.main]]
+          name = 'Portfolio'
+          pageRef = '/pl/portfolio'
+          weight = 3
+    [languages.pl.params]
+      footerText = 'Stworzone z <a href="https://stats.fm/codebased" target="_blank">|></a> przez bytequill@codebased.xyz <> Zobacz <a href="https://github.com/bytequill/codebased.xyz" target="_blank">Kod źródłowy</a>'
+      notice = '🌍 The content of this site is <a href="%s">originally written in English</a>'
 
 [params]
 description = 'Awesome computer nerd on the internet :3'
-
-footerText = 'Made with <a href="https://stats.fm/codebased">|></a> by bytequill :3 <> See the <a href="https://github.com/bytequill/codebased.xyz">Source code</a>'
