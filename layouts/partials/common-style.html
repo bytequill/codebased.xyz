@@ -29,13 +29,33 @@
 	}
 
 	body {
-		width: 630px;
+		width: 800px;
 		margin: auto;
 		background: var(--bg0);
 		color: var(--fg0);
 		overflow-wrap: break-word;
 		font-family: "Iosevka Web", "Fira Code", monospace;
+		line-height: 1.65;
 	}
+	
+	@media print {
+		body {
+			width: 630px;
+		}
+		
+		img {
+			max-width: 630px !important;
+		}
+		
+		header, footer {
+			display: none;
+		}
+		
+		p, .imgfig {
+	 		break-inside: avoid;
+		}
+	}
+	
 
 	.fira {
 		font-family: "Fira Code", monospace;
@@ -68,11 +88,11 @@
 	}
 
 	img {
-		max-width: 630px;
+		max-width: 800px;
 	}
 
 	.imgfig {
-		margin: 0 auto;
+		margin: 10px auto;
 		border: 1px solid var(--fg0);
 		width: fit-content;
 		display: flex;
